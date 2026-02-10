@@ -1,6 +1,10 @@
 # AI Image Generator — Mass Assignment Lab
 
 
+<img width="1616" height="852" alt="image" src="https://github.com/user-attachments/assets/c73a5f85-d0c2-4081-8309-b198e237e05d" />
+
+
+
 This is an educational laboratory on **Mass Assignment** vulnerability in a modern REST API built with NestJS and SQLite.
 
 ## Quick Start
