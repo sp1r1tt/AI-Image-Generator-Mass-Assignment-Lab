@@ -1,4 +1,4 @@
-# AI Image Generator — Mass Assignment Lab (2026)
+# AI Image Generator — Mass Assignment Lab
 
 This is an educational laboratory on **Mass Assignment** vulnerability in a modern REST API built with NestJS and SQLite.
 
