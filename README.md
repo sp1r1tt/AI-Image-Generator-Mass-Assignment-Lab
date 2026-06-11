@@ -3,7 +3,13 @@
 
 <img width="1616" height="852" alt="image" src="https://github.com/user-attachments/assets/c73a5f85-d0c2-4081-8309-b198e237e05d" />
 
+## Tech Stack
 
+- **Backend**: NestJS 11, TypeScript, Node.js
+- **API**: REST API with JWT authentication via Passport and `@nestjs/jwt`
+- **Database**: SQLite with TypeORM (`synchronize: true` in development)
+- **Validation**: `class-validator`, `class-transformer`, and Zod for the safe update flow
+- **API Docs**: Swagger UI via `@nestjs/swagger` and `swagger-ui-express`
 
 This is an educational laboratory on **Mass Assignment** vulnerability in a modern REST API built with NestJS and SQLite.
 
