@@ -1,0 +1,47 @@
+rules:
+  - id: nestjs-mass-assignment-object-assign
+    languages:
+      - typescript
+    severity: WARNING
+    message: >
+      Potential Mass Assignment: Object.assign copies an input object
+      into an existing object. Verify that the input is validated and
+      restricted to explicitly allowed properties.
+    metadata:
+      category: security
+      cwe: CWE-915
+      technology:
+        - nestjs
+        - typeorm
+
+    patterns:
+      - pattern: Object.assign($ENTITY, $INPUT)
+      - pattern-inside: |
+          $METHOD(...) {
+            ...
+            const $ENTITY = await $REPO.findOne$X(...);
+            ...
+            Object.assign($ENTITY, $INPUT);
+            ...
+            await $REPO.save($ENTITY);
+            ...
+          }
+
+  - id: nestjs-mass-assignment-repository-create
+    languages:
+      - typescript
+    severity: WARNING
+    message: >
+      Potential Mass Assignment: Repository.create receives an input
+      object. Verify that privileged properties are excluded.
+    metadata:
+      category: security
+      cwe: CWE-915
+      technology:
+        - nestjs
+        - typeorm
+    patterns:
+      - pattern: $REPO.create($INPUT)
+      - metavariable-regex:
+          metavariable: $REPO
+          regex: (?i).*(repo|repository).*
